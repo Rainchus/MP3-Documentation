@@ -19,13 +19,19 @@
 800E3470 - Wacky Watch Function
 80102CB7 - Current Item Selection ID (when your hand is hovering over an item)
 80102C58 - List of pointers to Item Functions (table below)
-800EEF80 - Item Bag Random Items?
 800CC167 - Show/Dont Show Minigame Explanations (00 = show, 01 = dont show)
 800CC16A - Hide/Show COM Mini-Games (00 = show, 01 = dont show)
 800CC157 - All/Easy Mini-Games (00 = All, 01 = Easy)
 800CC169 - Player Walking Speed on Boards (00 = Fast, 01 = Normal, 02 = Slow, Unused 03 = Super Slow)
 800CC168 - Message Speed (00 = Fast, 01 = Normal, 02 = Slow)
 800CC166 - Save Type (00 = Every Turn, 01 = This Turn, 02 = Don't Save)
+8011E1A2 - First toad shop textbox (uses a stringID, 3B-00)
+8024B320 - string goes here before being print (on the stack)
+80060404
+800BDA6C - Text Box Width
+800BDA6E - Text Box Height
+8011E0A0 - Shop Items 1
+80100F94 - Shop Item Cost
 
 Some ROM free space?
 0x909CC 	ROM
@@ -93,6 +99,7 @@ ItemEnum
 0x11 - Lucky Charm
 0x12 - Wacky Watch
 }
+
 
 ItemFunctions 80102C58
 {
@@ -176,5 +183,50 @@ BabyBowserItemBagChances 8011E132 1st place, early game
 	0x5D (83 - 92 = Bowser Suit) 10%
 	0x62 (93 - 97 = Boo Bell) 5%
 	0x64 (98 - 99 = Lucky Charm) 2%
+}
+
+Toad Shop Items (Variant 1) 8011E0A0
+
+
+Shop Items Cost 80100F94
+{
+	0x05 - Mushroom
+	0x05 - Skeleton Key
+	0x05 - Poison Mushroom
+	0x05 - Reverse Mushroom
+	0x05 - Cellular Shopper
+	0x05 - Warp Block
+	0x0A - Plunder Chest
+	0x0A - Bowser Phone
+	0x0A - Dueling Glove
+	0x0A - Lucky Lamp
+	0x0A - Golden Mushroom
+	0x0F - Boo Bell
+	0x0A - Boo Repellant
+	0x0A - Bowser Suit
+	0x14 - Magic Lamp
+	0xFF - 
+	0xFF - 
+	0xFF - 
+	0xFF - 
+	0x1E - Item Bag
+
+}
+
+
+
+StringIDs
+{
+	01-00 "The ice looks like it might crack\nif another player stops on it."
+	01-01 "You were surprsied by the cracking ice\nand ran away to the edge of the lake."
+
+	02-00 "The Snowman didn't wake up."
+	02-01 "Zzz...Hmm?\nWhat! I'm sleepin' here!\nYou want me to roll a snowball?"
+	02-02 "OK, OK.\nThere! Are you happy?"
+	02-03 "What?\nThen just let me sleep!\nI'm beat and...zzz...."
+	02-04 "If you don't have any\ncoins, I've got nothin' to say.\nG'night...zzz...zzz."
+
+	03-00 "Ouch! Bad luck.\nYou slipped and fell down."
+	03-01 
 }
 
