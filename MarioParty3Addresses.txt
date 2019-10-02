@@ -1,0 +1,180 @@
+800CCF7C - Player 1 Buttons Held
+800CCF7E - Player 2 Buttons Held
+800CCF80 - Player 3 Buttons Held
+800CCF82 - Player 4 Buttons Held
+800C9520 - Player 1 Button Press 1 Frame
+800C9522 - Player 2 Button Press 1 Frame
+800C9524 - Player 3 Button Press 1 Frame
+800C9526 - Player 4 Button Press 1 Frame
+800D5AC0 - Character Bones?
+8004B220 - Stores Button Press %ran once per frame ( jr ra at 8004B254 )
+800DBD0C - Asm Code for Storing Player 1s Beginning Dice Roll
+800D1108 - Player 1 Struct
+800D1140 - Player 2 Struct
+800D1178 - Player 3 Struct
+800D11B0 - Player 4 Struct
+800977C0 - 8009F700 Ascii characters/debug characters? %( Unused Font )
+800A76F8 - text that displays after winning/losing a minigame
+800CD0AB - Wacky Watch Active (00 if not, 02 if active)
+800E3470 - Wacky Watch Function
+80102CB7 - Current Item Selection ID (when your hand is hovering over an item)
+80102C58 - List of pointers to Item Functions (table below)
+800EEF80 - Item Bag Random Items?
+800CC167 - Show/Dont Show Minigame Explanations (00 = show, 01 = dont show)
+800CC16A - Hide/Show COM Mini-Games (00 = show, 01 = dont show)
+800CC157 - All/Easy Mini-Games (00 = All, 01 = Easy)
+800CC169 - Player Walking Speed on Boards (00 = Fast, 01 = Normal, 02 = Slow, Unused 03 = Super Slow)
+800CC168 - Message Speed (00 = Fast, 01 = Normal, 02 = Slow)
+800CC166 - Save Type (00 = Every Turn, 01 = This Turn, 02 = Don't Save)
+
+Some ROM free space?
+0x909CC 	ROM
+0x95A30 	ROM
+0x1C3B6D0 	ROM
+0x1C5063C	ROM
+
+
+PlayerStruct
+{
+0x00	u8
+0x01	u8  CPU Difficulty
+0x02	u8  Player Controller Number
+0x03	u8  Character
+0x04	u8  Flags? value & 1 == Player is CPU
+0x0A	u16 Coin Count
+0x0E	u8  Star Count
+0x0F	u8  Current Chain Index
+0x10	u8  Current Space Index
+0x11	u8  Next Chain Index
+0x12	u8  Next Space Index
+0x13	u8  (Chain Index?)
+0x14	u8  (Space Index?)
+0x15	u8  (Chain Index?)
+0x16	u8  (Space Index?)
+0x17	u8  Flags
+0x18	u8  Item 1
+0x19	u8  Item 2
+0x1A	u8  Item 3
+0x24	u32 Unknown
+}
+
+CharactersEnum
+{
+0x00 - Mario
+0x01 - Luigi
+0x02 - Peach
+0x03 - Yoshi
+0x04 - Wario
+0x05 - DK
+0x06 - Waluigi
+0x07 - Daisy
+}
+
+
+ItemEnum
+{
+0x00 - Mushroom
+0x01 - Skeleton Key
+0x02 - Poison Mushroom
+0x03 - Reverse Mushroom
+0x04 - Cellular Shopper
+0x05 - Warp Block
+0x06 - Plunder Chest
+0x07 - Bowser Phone
+0x08 - Dueling Glove
+0x09 - Lucky Lamp
+0x0A - Golden Mushroom
+0x0B - Boo Bell
+0x0C - Boo Repellant
+0x0D - Bowser Suit
+0x0E - Magic Lamp
+0x0F - Koopa Kard
+0x10 - Barter Box
+0x11 - Lucky Charm
+0x12 - Wacky Watch
+}
+
+ItemFunctions 80102C58
+{
+	8010DE7C - Boo (Using Boo)
+	8010F2FC - Magic Lamp
+	8010F730 - Warp Block
+	80117C60 - Plunder Chest
+	8011093C - Bowser Suit Transformation
+	80110BC8 - Crash
+	8010FC24 - Mushroom/Golden Mushroom/Bowser Suit
+	80110194 - Dueling Glove/Boo Bell
+	801104E0 - Poison Mushroom/Reverse Mushroom/Boo Repellant/Koopa Kard
+	8010F6C4 - At Star Space (if used as item, softlocks/crashes after if you say yes)
+	80116F5C - Places Poison Shroom on Opponent
+	801177DC - Places Reverse Shroom on Opponent
+	80116DAC - ?
+	801176A4 - ?
+	80111018 - Celluar Shopper
+	801112D8 - Bowser Phone
+	80111678 - Lucky Lamp
+	80112074 - Skeleton Key Throw Away
+	80112BCC - ?
+	801138E4 - Barter Box
+	80114B80 - Lucky Charm
+	80115B80 - Wacky Watch
+}
+
+
+ItemBagItems 8011E164
+{
+	0x00 - Mushroom
+	0x01 - Skeleton Key
+	0x04 - Cellular Shopper
+	0x05 - Warp Block
+	0x08 - Dueling Glove
+	0x0A - Golden Mushroom
+	0x0C - Boo Repellant
+	0x0E - Magic Lamp
+	0x0F - Koopa Kard
+	0x10 - Barter Box
+}
+
+
+BabyBowserItemBagItems 8011E16E
+{
+	0x01 - Skeleton Key
+	0x02 - Poison Mushroom
+	0x03 - Reverse Mushroom
+	0x06 - Plunder Chest
+	0x07 - Bowser Phone
+	0x09 - Lucky Lamp
+	0x0B - Boo Bell
+	0x0D - Bowser Suit
+	0x11 - Lucky Charm
+}
+
+
+ItemBagChances 8011E100 1st place, early game
+{
+	0x19 (0 - 24 = Mushroom) 25%
+	0x37 (25 - 54 = Skeleton Key) 30%
+	0x41 (55 - 64 = Cellular Shopper) 10%
+	0x4C (65 - 75 = Warp Block) 11%
+	0x51 (76 - 80 = Dueling Glove) 5%
+	0x56 (81 - 85 = Golden Mushroom) 5%
+	0x5B (86 - 90 = Boo Repellant) 5%
+	0x60 (91 - 95 = Magic Lamp) 5%
+	0x62 (96 - 97 = Koopa Kard) 2%
+	0x64 (98 - 99 = Barter Box) 2%
+}
+
+
+BabyBowserItemBagChances 8011E132 1st place, early game
+{
+	0x21 (0 - 32 = Skeleton Key) 33%
+	0x35 (33 - 52 = Poison Mushroom ) 20%
+	0x44 (53 - 67 = Reverse Mushroom) 15%
+	0x49 (68 - 72 = Plunder Chest) 5%
+	0x4E (73 - 77 = Bowser Phone) 5%
+	0x53 (78 - 82 = Lucky Lamp) 5%
+	0x5D (83 - 92 = Bowser Suit) 10%
+	0x62 (93 - 97 = Boo Bell) 5%
+	0x64 (98 - 99 = Lucky Charm) 2%
+}
+
