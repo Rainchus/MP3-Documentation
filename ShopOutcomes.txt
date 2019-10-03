@@ -32,3 +32,122 @@ Last 5 turns :
 2nd - Variant 4
 3rd - Variant 5
 4th - Variant 5
+
+
+
+
+Toad Shop Items (Variant 1) 8011E0A0 (For all players on first 5 turns)
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Warp Block
+	Golden Mushroom
+	Magic Lamp
+	Item Bag
+}
+
+
+Toad Shop Items (Variant 2) 8011E0A7
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Warp Block
+	Golden Mushroom
+	Boo Repellant
+	Item Bag
+}
+
+
+Toad Shop Items (Variant 3) 8011E0AE
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Warp Block
+	Golden Mushroom
+	Item Bag
+}
+
+Toad Shop Items (Variant 4) 8011E0B5
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Dueling Glove
+	Golden Mushroom
+	Boo Repellant
+	Item Bag
+}
+
+
+Toad Shop Items (Variant 5) 8011E0BC
+{
+	Mushroom
+	Skeleton Key
+	Dueling Glove
+	Golden Mushroom
+	Boo Repellant
+	Magic Lamp
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 1) 8011E0C3
+{
+	Skeleton Key
+	Poison Mushroom
+	Reverse Mushroom
+	Plunder Chest
+	Bowser Suit
+	Boo Bell
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 2) 8011E0CA
+{
+	Skeleton Key
+	Poison Mushroom
+	Reverse Mushroom
+	Plunder Chest
+	Lucky Lamp
+	Bowser Suit
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 3) 8011E0D1
+{
+	Skeleton Key
+	Poison Mushroom
+	Reverse Mushroom
+	Bowser Phone
+	Bowser Suit
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 4) 8011E0D8
+{
+	Skeleton Key
+	Reverse Mushroom
+	Plunder Chest
+	Bowser Suit
+	Lucky Lamp
+	Bowser Suit
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 5) 8011E0DF
+{
+	Skeleton Key
+	Reverse Mushroom
+	Plunder Chest
+	Bowser Phone
+	Lucky Lamp
+	Boo Bell
+	Item Bag
+}
