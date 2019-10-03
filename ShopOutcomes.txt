@@ -1,0 +1,34 @@
+Toad Shop Outcomes
+
+First 5 turns :
+Everyone - Variant 1
+
+Mid turns :
+1st - Variant 2
+2nd - Variant 1
+3rd - Variant 1
+4th - Variant 1
+
+Last 5 turns :
+1st - Variant 3
+2nd - Variant 4
+3rd - Variant 5
+4th - Variant 5
+
+
+Baby Bowser Shop Outcomes
+
+First 5 turns
+Everyone - Variant 1
+
+Mid turns :
+1st - Variant 2
+2nd - Variant 1
+3rd - Variant 1
+4th - Variant 1
+
+Last 5 turns :
+1st - Variant 3
+2nd - Variant 4
+3rd - Variant 5
+4th - Variant 5

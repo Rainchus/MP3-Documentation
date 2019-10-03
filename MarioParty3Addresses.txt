@@ -27,11 +27,11 @@
 800CC166 - Save Type (00 = Every Turn, 01 = This Turn, 02 = Don't Save)
 8011E1A2 - First toad shop textbox (uses a stringID, 3B-00)
 8024B320 - string goes here before being print (on the stack)
-80060404
 800BDA6C - Text Box Width
 800BDA6E - Text Box Height
 8011E0A0 - Shop Items 1
 80100F94 - Shop Item Cost
+8010BC8C - JAL to GetPlayerPlacement (JAL here is for getting playerplacement so the game knows what items to load into the shop)
 
 Some ROM free space?
 0x909CC 	ROM
@@ -63,6 +63,7 @@ PlayerStruct
 0x1A	u8  Item 3
 0x24	u32 Unknown
 }
+
 
 CharactersEnum
 {
@@ -185,8 +186,6 @@ BabyBowserItemBagChances 8011E132 1st place, early game
 	0x64 (98 - 99 = Lucky Charm) 2%
 }
 
-Toad Shop Items (Variant 1) 8011E0A0
-
 
 Shop Items Cost 80100F94
 {
@@ -230,3 +229,119 @@ StringIDs
 	03-01 
 }
 
+
+Toad Shop Items (Variant 1) 8011E0A0 (For all players on first 5 turns)
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Warp Block
+	Golden Mushroom
+	Magic Lamp
+	Item Bag
+}
+
+
+Toad Shop Items (Variant 2) 8011E0A7
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Warp Block
+	Golden Mushroom
+	Boo Repellant
+	Item Bag
+}
+
+
+Toad Shop Items (Variant 3) 8011E0AE
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Warp Block
+	Golden Mushroom
+	Item Bag
+}
+
+Toad Shop Items (Variant 4) 8011E0B5
+{
+	Mushroom
+	Skeleton Key
+	Cellular Shopper
+	Dueling Glove
+	Golden Mushroom
+	Boo Repellant
+	Item Bag
+}
+
+
+Toad Shop Items (Variant 5) 8011E0BC
+{
+	Mushroom
+	Skeleton Key
+	Dueling Glove
+	Golden Mushroom
+	Boo Repellant
+	Magic Lamp
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 1) 8011E0C3
+{
+	Skeleton Key
+	Poison Mushroom
+	Reverse Mushroom
+	Plunder Chest
+	Bowser Suit
+	Boo Bell
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 2) 8011E0CA
+{
+	Skeleton Key
+	Poison Mushroom
+	Reverse Mushroom
+	Plunder Chest
+	Lucky Lamp
+	Bowser Suit
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 3) 8011E0D1
+{
+	Skeleton Key
+	Poison Mushroom
+	Reverse Mushroom
+	Bowser Phone
+	Bowser Suit
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 4) 8011E0D8
+{
+	Skeleton Key
+	Reverse Mushroom
+	Plunder Chest
+	Bowser Suit
+	Lucky Lamp
+	Bowser Suit
+	Item Bag
+}
+
+
+Baby Bowser Shop Items (Variant 5) 8011E0DF
+{
+	Skeleton Key
+	Reverse Mushroom
+	Plunder Chest
+	Bowser Phone
+	Lucky Lamp
+	Boo Bell
+	Item Bag
+}
