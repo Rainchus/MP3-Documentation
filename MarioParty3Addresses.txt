@@ -126,7 +126,9 @@ ItemEnum
 0x12 - Wacky Watch
 }
 
-HiddenItemBlockChances 80101E70
+HiddenItemBlockChances 
+RAM: 80101E70
+ROM: 115A90
 {
 	0x48 (0 - 71 = Skeleton Key) 72%
 	0x50 (72 - 79 = Magic Lamp) 8%
@@ -137,7 +139,9 @@ HiddenItemBlockChances 80101E70
 }
 
 
-BowserEventFunctions 801093EC
+BowserEventFunctions
+RAM: 801093EC
+ROM: 3C620C
 {
 	8010778C - Coins for Bowser
 	801078CC - Bowser's Coin Potluck
@@ -176,6 +180,74 @@ ItemFunctions 80102C58
 	801138E4 - Barter Box
 	80114B80 - Lucky Charm
 	80115B80 - Wacky Watch
+
+Begins at 31D950 in ROM
+
+80107DE0 : LUI a1, 0x8011
+80107DE4 : ADDIU a1, a1, 0xDE7C %load Boo function pointer
+
+80107DF0 : LUI a1, 0x8011
+80107DF4 : ADDIU a1, a1, 0xF2FC %load magic lamp function pointer
+
+80107E00 : LUI a1, 0x8011
+80107E04 : ADDIU a1, a1, 0xF6C4 %load star space "item" function pointer
+
+80107E10 : LUI a1, 0x8011
+80107E14 : ADDIU a1, a1, 0xF730 %load warp block function pointer
+
+80107E20 : LUI a1, 0x8011
+80107E24 : ADDIU a1, a1, 0x7C60 %load plunder chest function pointer
+
+80107E30 : LUI a1, 0x8011
+80107E34 : ADDIU a1, a1, 0x093C %Bowser Suit Transformation function pointer
+
+80107E40 : LUI a1, 0x8011
+80107E44 : ADDIU a1, a1, 0x0BC8 %Crash?
+
+80107E50 : LUI a1, 0x8011
+80107E54 : ADDIU a1, a1, 0xFC24 %load Mushroom/Golden Mushroom/Bowser Suit function pointer
+
+80107E60 : LUI a1, 0x8011
+80107E64 : ADDIU a1, a1, 0x0194 %load Dueling Glove/Boo Bell function pointer
+
+80107E70 : LUI a1, 0x8011
+80107E74 : ADDIU a1, a1, 0x04E0 %load Poison Mushroom/Reverse Mushroom/Boo Repellant/Koopa Kard function pointer
+
+80107E80 : LUI a1, 0x8011
+80107E84 : ADDIU a1, a1, 0x6F5C %load placing poison shroom on opponent function pointer
+
+80107E90 : LUI a1, 0x8011
+80107E94 : ADDIU a1, a1, 0x77DC %load "Places Reverse Shroom on opponent" function pointer
+
+80107EA0 : LUI a1, 0x8011
+80107EA4 : ADDIU a1, a1, 0x1018 %load cellular shopper function pointer
+
+80107EB0 : LUI a1, 0x8011
+80107EB4 : ADDIU a1, a1, 0x12D8 %load bowser phone function pointer
+
+80107EC0 : LUI a1, 0x8011
+80107EC4 : ADDIU a1, a1, 0x1678 %load lucky lamp function pointer
+
+80107ED0 : LUI a1, 0x8011
+80107ED4 : ADDIU a1, a1, 0x2074 %load skeleton key throwaway function pointer
+
+80107EE0 : LUI a1, 0x8011
+80107EE4 : ADDIU a1, a1, 0x2BCC %? load function pointer
+
+80107EF0 : LUI a1, 0x8011
+80107EF4 : ADDIU a1, a1, 0x38E4 %load barter box function pointer
+
+80107F00 : LUI a1, 0x8011
+80107F04 : ADDIU a1, a1, 0x4B80 %load lucky charm function pointer
+
+80107F10 : LUI a1, 0x8011
+80107F14 : ADDIU a1, a1, 0x5B80 %load wacky watch function pointer
+
+80107F20 : LUI a1, 0x8011
+80107F24 : ADDIU a1, a1, 0x6DAC %? load function pointer
+
+80107F30 : LUI a1, 0x8011
+80107F34 : ADDIU a1, a1, 0x76A4 %? load function pointer
 }
 
 
@@ -237,7 +309,9 @@ BabyBowserItemBagChances 8011E132 1st place, early game
 }
 
 
-Shop Items Cost 80100F94
+Shop Items Cost
+RAM: 80100F94
+ROM: 114BB4
 {
 	0x05 - Mushroom
 	0x05 - Skeleton Key
