@@ -1,3 +1,5 @@
+800D5546 - Player 1 Held Buttons (2nd)
+800D5558 - Player 1 Button Press 1 Frame (2nd)
 800CCF7C - Player 1 Buttons Held
 800CCF7E - Player 2 Buttons Held
 800CCF80 - Player 3 Buttons Held
@@ -31,7 +33,30 @@
 800BDA6E - Text Box Height
 8011E0A0 - Shop Items 1
 80100F94 - Shop Item Cost
-8010BC8C - JAL to GetPlayerPlacement (JAL here is for getting playerplacement so the game knows what items to load into the shop)
+8010BC8C - Some Shop Code (JAL here is for getting playerplacement so the game knows what items to load into the shop)
+8000D06C - Generate star sparkle effect
+800FCA7C - Item Space Code?
+800FF0F4 - End of Item space code?
+800DBC2C - Dice roll code?
+800DCFE4 - JAL to important dice roll code
+800DCF24 - If A is pressed below dice block, run this code
+8012E8BC - Player 4 X pos
+8012E8C0 - Player 4 Y pos
+8012E8C4 - Player 4 Z pos
+800EE688 - Player Jump
+800DCBCC - Break Dice Block
+800F2388 - Player comes back down after jump code?
+8010570E - ?
+801057F0 - First Player Icon and Stats X pos
+801057F4 - First Player Icon and Stats Y pos
+8010585C - Second Player Icon and Stats X pos
+80105860 - Second Player Icon and Stats Y pos
+801058C8 - Third Player Icon and Stats X pos
+801058CC - Third Player Icon and Stats Y pos
+80105934 - Fourth Player Icon and Stats X pos
+80105938 - Fourth Player Icon and Stats Y pos
+80105708 - Dice Block Height
+801086E4 - Bowser Shuffle Function
 
 Some ROM free space?
 0x909CC 	ROM
@@ -99,6 +124,31 @@ ItemEnum
 0x10 - Barter Box
 0x11 - Lucky Charm
 0x12 - Wacky Watch
+}
+
+HiddenItemBlockChances 80101E70
+{
+	0x48 (0 - 71 = Skeleton Key) 72%
+	0x50 (72 - 79 = Magic Lamp) 8%
+	0x55 (80 - 84 = Koopa Kard) 5%
+	0x5A (85 - 89 = Wacky Watch) 5%
+	0x5F (90 - 94 = Lucky Charm) 5%
+	0x64 (95 - 99 = Barter Box) 5%
+}
+
+
+BowserEventFunctions 801093EC
+{
+	8010778C - Coins for Bowser
+	801078CC - Bowser's Coin Potluck
+	80107A9C - Bowser Suit Giveaway
+	80107DDC - Bowser Phone Giveaway
+	801085E4 - Bowser's Curse
+	80108664 - Reverse Curse
+	801086E4 - Bowser Shuffle
+	80108A2C - Bowser Revolution
+	80108BB0 - Bowser ran away!
+	80108BB0 - Bowser ran away!
 }
 
 
