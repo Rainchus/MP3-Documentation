@@ -1,3 +1,4 @@
+80000400 - Game Entry
 800D5546 - Player 1 Held Buttons (2nd)
 800D5558 - Player 1 Button Press 1 Frame (2nd)
 800CCF7C - Player 1 Buttons Held
@@ -15,7 +16,7 @@
 800D1140 - Player 2 Struct
 800D1178 - Player 3 Struct
 800D11B0 - Player 4 Struct
-800977C0 - 8009F700 Ascii characters/debug characters? %( Unused Font )
+800977C0 - 8009F700 Ascii characters/debug characters? %( Unused Font ) ROM: 983C0
 800A76F8 - text that displays after winning/losing a minigame
 800CD0AB - Wacky Watch Active (00 if not, 02 if active)
 800E3470 - Wacky Watch Function
@@ -36,7 +37,7 @@
 8010BC8C - Some Shop Code (JAL here is for getting playerplacement so the game knows what items to load into the shop)
 8000D06C - Generate star sparkle effect
 800FCA7C - Item Space Code?
-800FF0F4 - End of Item space code?
+800FCA7C - 800FF0F4 (Range of Item space code?)
 800DBC2C - Dice roll code?
 800DCFE4 - JAL to important dice roll code
 800DCF24 - If A is pressed below dice block, run this code
@@ -56,7 +57,9 @@
 80105934 - Fourth Player Icon and Stats X pos
 80105938 - Fourth Player Icon and Stats Y pos
 80105708 - Dice Block Height
-801086E4 - Bowser Shuffle Function
+8011D9A0 - 8011FA70 All data for item bags
+
+ROM: 1225490 Beginning of strings?
 
 Some ROM free space?
 0x909CC 	ROM
@@ -251,7 +254,9 @@ Begins at 31D950 in ROM
 }
 
 
-ItemBagItems 8011E164
+ItemBagItems
+RAM: 8011E164
+ROM: 333CD4
 {
 	0x00 - Mushroom
 	0x01 - Skeleton Key
@@ -263,10 +268,15 @@ ItemBagItems 8011E164
 	0x0E - Magic Lamp
 	0x0F - Koopa Kard
 	0x10 - Barter Box
+
+8010C22C : LUI v0, 0x8012
+8010C230 : ADDIU v0, v0, 0xE164 %load address of item chances
 }
 
 
-BabyBowserItemBagItems 8011E16E
+BabyBowserItemBagItems
+RAM: 8011E16E
+ROM: 333CDE
 {
 	0x01 - Skeleton Key
 	0x02 - Poison Mushroom
@@ -280,7 +290,9 @@ BabyBowserItemBagItems 8011E16E
 }
 
 
-ItemBagChances 8011E100 1st place, early game
+ItemBagChances (Variant 1?)
+RAM: 8011E100
+ROM: 333C70
 {
 	0x19 (0 - 24 = Mushroom) 25%
 	0x37 (25 - 54 = Skeleton Key) 30%
@@ -295,7 +307,9 @@ ItemBagChances 8011E100 1st place, early game
 }
 
 
-BabyBowserItemBagChances 8011E132 1st place, early game
+BabyBowserItemBagChances (Variant 1?)
+RAM: 8011E132
+ROM: 333CA2
 {
 	0x21 (0 - 32 = Skeleton Key) 33%
 	0x35 (33 - 52 = Poison Mushroom ) 20%
