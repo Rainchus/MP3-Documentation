@@ -16,6 +16,10 @@
 800D1140 - Player 2 Struct
 800D1178 - Player 3 Struct
 800D11B0 - Player 4 Struct
+800CDBD2 - Player 1 Forced Dice Roll Number
+800CDC1E - Player 2 Forced Dice Roll Number
+800CDC6A - Player 3 Forced Dice Roll Number
+800CDCB6 - Player 4 Forced Dice Roll Number
 800977C0 - 8009F700 Ascii characters/debug characters? %( Unused Font ) ROM: 983C0
 800A76F8 - text that displays after winning/losing a minigame
 800CD0AB - Wacky Watch Active (00 if not, 02 if active)
@@ -26,6 +30,8 @@
 800CC16A - Hide/Show COM Mini-Games (00 = show, 01 = dont show)
 800CC157 - All/Easy Mini-Games (00 = All, 01 = Easy)
 800CC169 - Player Walking Speed on Boards (00 = Fast, 01 = Normal, 02 = Slow, Unused 03 = Super Slow)
+800CD06D - Actual Player Walking Speed on Boards
+80105680 - Floats in this memory region control speed of things like messages and player walking speed on board
 800CC168 - Message Speed (00 = Fast, 01 = Normal, 02 = Slow)
 800CC166 - Save Type (00 = Every Turn, 01 = This Turn, 02 = Don't Save)
 8011E1A2 - First toad shop textbox (uses a stringID, 3B-00)
@@ -58,6 +64,27 @@
 80105938 - Fourth Player Icon and Stats Y pos
 80105708 - Dice Block Height
 8011D9A0 - 8011FA70 All data for item bags
+8010570F - Setting to 1 changes the dice block animation (it goes up and down)
+800ED20C - Turn Player to face something? (a0 = FFFF a1 = speed to turn (usually 8))
+80033128 - Generate Random Numbers for Dice Block (only graphical)
+801D236E - Global Animation thing?
+801C8F80 - List of pointers to player 1 bones?
+8001BBEC - NOP 2 instructions here to stop the dice block from getting random numbers (graphically)
+
+Dice Roll Graphical Numbers RAM: 80187220
+{
+	0 = 9
+	1 = 2
+	2 = 4
+	3 = 10
+	4 = 3
+	5 = 7
+	6 = 5
+	7 = 8
+	8 = 6
+	9 = 1
+}
+
 
 ROM: 1225490 Beginning of strings?
 
@@ -67,6 +94,26 @@ Some ROM free space?
 0x1C3B6D0 	ROM
 0x1C5063C	ROM
 
+SpaceEnum
+{
+	0x00 Skip space?
+	0x01 Blue space
+	0x02 Red space
+	0x03 Skip space?
+	0x04 Happening space?
+	0x05 Chance Time
+	0x06 Item space
+	0x07 Bank space
+	0x08 Skip space?
+	0x09 Battle Minigame
+	0x0A Skip space?
+	0x0B Skip space?
+	0x0C Bowser space
+	0x0D Skip space?
+	0x0E Skip space?
+	0x0F Game Guy
+	0x10 Skip space?
+}
 
 PlayerStruct
 {
@@ -90,6 +137,14 @@ PlayerStruct
 0x19	u8  Item 2
 0x1A	u8  Item 3
 0x24	u32 Unknown
+}
+
+2ndPlayerStruct? length: 4C
+{
+0x00 	u8 Unknown
+0x01 	u8 Unknown
+0x02 	u8 ForceDiceRollNumber
+0x03 	u8 
 }
 
 
@@ -166,7 +221,7 @@ ItemFunctions 80102C58
 	8010F730 - Warp Block
 	80117C60 - Plunder Chest
 	8011093C - Bowser Suit Transformation
-	80110BC8 - Crash
+	80110BC8 - Untransform from bowser suit
 	8010FC24 - Mushroom/Golden Mushroom/Bowser Suit
 	80110194 - Dueling Glove/Boo Bell
 	801104E0 - Poison Mushroom/Reverse Mushroom/Boo Repellant/Koopa Kard
