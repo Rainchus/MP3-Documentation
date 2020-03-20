@@ -1,0 +1,131 @@
+Item Bag Odds
+
+
+Toad Item Bag Odds
+=====================================================
+19 37 41 4C 51 56 5B 60 62 64 - table odds 1
+1E 32 3C 46 4B 55 5A 5F 61 64 - table odds 2
+19 2D 34 3E 43 52 58 5F 61 64 - table odds 3
+14 23 28 2D 37 4B 55 5F 61 64 - table odds 4
+0F 19 1E 28 2D 46 50 5C 5F 64 - table odds 5
+=====================================================
+Baby Bowser Item Bag Odds
+=====================================================
+21 35 44 49 4E 53 5D 62 64	  - table odds 6
+00 Unused Byte
+19 28 37 3F 49 51 5B 62 64    - table odds 7
+00 Unused Byte
+14 26 3A 44 4B 52 5A 62 64    - table odds 8
+00 Unused Byte
+0F 23 37 41 48 4F 55 61 64    - table odds 9
+=====================================================
+
+Toad Item Bag Tables To Use
+=====================================================
+Order Of Items:
+0x00 - Mushroom
+0x01 - Skeleton Key
+0x04 - Cellular Shopper
+0x05 - Warp Block
+0x08 - Dueling Glove
+0x0A - Golden Mushroom
+0x0C - Boo Repllant
+0x0E - Magic Lamp
+0x0F - Koopa Kard
+0x10 - Barter Box
+
+1st place turn tier 1
+8011E100 - table odds 1
+
+2nd place turn tier 1
+8011E100 - table odds 1
+
+3rd place turn tier 1
+8011E10A - table odds 2
+
+4th place turn tier 1
+8011E10A - table odds 2
+
+
+
+1st place turn tier 2
+8011E10A - table odds 2
+
+2nd place turn tier 2
+8011E114 - table odds 3
+
+3rd place turn tier 2
+8011E114 - table odds 3
+
+4th place turn tier 2
+8011E11E - table odds 4
+
+
+
+1st place turn tier 3
+8011E114 - table odds 3
+
+2nd place turn tier 3
+8011E11E - table odds 4
+
+3rd place turn tier 3
+8011E11E - table odds 4
+
+4th place turn tier 3
+8011E128 - table odds 5
+=====================================================
+
+Baby Bowser Item Bag Tables To Use
+=====================================================
+Order Of Items:
+0x01 - Skeleton Key
+0x02 - Poison Mushroom
+0x03 - Reverse Mushroom
+0x06 - Plunder Chest
+0x07 - Bowser Phone
+0x09 - Lucky Lamp
+0x0D - Bowser Suit
+0x0B - Boo Bell
+0x11 - Lucky Charm
+
+1st place turn tier 1
+8011E132 - table odds 6
+
+2nd place turn tier 1
+8011E132 - table odds 6
+
+3rd place turn tier 1
+8011E13C - table odds 7
+
+4th place turn tier 1
+8011E13C - table odds 7
+
+
+
+1st place turn tier 2
+8011E13C - table odds 7
+
+2nd place turn tier 2
+8011E150 - table odds 8
+
+3rd place turn tier 2
+8011E150 - table odds 8
+
+4th place turn tier 2
+8011E150 - table odds 8
+
+
+
+1st place turn tier 3
+8011E150 - table odds 8
+
+2nd place turn tier 3
+8011E150 - table odds 8
+
+3rd place turn tier 3
+8011E150 - table odds 8
+
+4th place turn tier 3
+8011E15A - table odds 9
+
+=====================================================
