@@ -1,4 +1,6 @@
 80000400 - Game Entry
+800DF118 - Function call here decides minigame to play from index
+80128DE4 - Minigame Index!
 800D5546 - Player 1 Held Buttons (2nd)
 800D5558 - Player 1 Button Press 1 Frame (2nd)
 800CCF7C - Player 1 Buttons Held
@@ -70,6 +72,28 @@
 801D236E - Global Animation thing?
 801C8F80 - List of pointers to player 1 bones?
 8001BBEC - NOP 2 instructions here to stop the dice block from getting random numbers (graphically)
+8004A0E0 - Start minigame?
+800CDBD0 - Player 1 (2nd struct for p1)
+800CDC1C - Player 2 (2nd struct for p2)
+800CDC68 - Player 3 (2nd struct for p3)
+800CDCB4 - Player 4 (2nd struct for p4)
+800E44E4 - Get Item Descriptions function (takes arg a0, player index)
+800F1EC8 - pause function
+800F5D8C - Hide HUD?
+80055024 - Dim screen? a0 = 04
+800F1C94 - Load pause screen? a0 = scene to load?
+800E21F4 - (func call at 800EF734)Remove Text from pause screen (Control Settings, and continue strings)
+800E210C - print text??
+80047898 -??
+800AC4B7 - memory address of start menu text
+80281F51
+800364DC ??
+A0350 - Debug Text Font (ROM Address)
+8009FB50 - Start of debug text alphabet
+8000E7B8 - Main Game Loop
+800CD0AC - Shop to load (2 byte) (0000 - random, 0001 - toad, 0002 - Baby Bowser)
+800EEF80 - GetRandOutOf100 (00-99)
+8010C1EC - Item Bag hardcoded pointer in asm
 
 Dice Roll Graphical Numbers RAM: 80187220
 {
@@ -122,8 +146,8 @@ PlayerStruct
 0x02	u8  Player Controller Number
 0x03	u8  Character
 0x04	u8  Flags? value & 1 == Player is CPU
-0x0A	u16 Coin Count
-0x0E	u8  Star Count
+0x0A	s16 Coin Count (i think s16 not u16)
+0x0E	s8  Star Count
 0x0F	u8  Current Chain Index
 0x10	u8  Current Space Index
 0x11	u8  Next Chain Index
@@ -136,7 +160,9 @@ PlayerStruct
 0x18	u8  Item 1
 0x19	u8  Item 2
 0x1A	u8  Item 3
-0x24	u32 Unknown
+0x1B 	u8  Bowser Suit Flags
+0x1C 	u8  Color of Space Landed On
+0x24	u32 OBJ Pointer (things like model data)
 }
 
 2ndPlayerStruct? length: 4C
@@ -159,7 +185,6 @@ CharactersEnum
 0x06 - Waluigi
 0x07 - Daisy
 }
-
 
 ItemEnum
 {
@@ -402,6 +427,16 @@ ROM: 114BB4
 	0xFF - 
 	0xFF - 
 	0x1E - Item Bag
+
+}
+
+8012EC78 - Message Struct??
+{
+	0x00 Bool? u32
+	0x04 RGBA5551 for text (Item purchase colors)
+	0x06 RGBA5551 for text again? (Baby Bowser's Joint color)
+	0x08 - ?
+	0x0C
 
 }
 
